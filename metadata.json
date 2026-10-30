@@ -1,0 +1,7 @@
+{
+  "name": "Valence Dental Atelier",
+  "description": "An editorial, restorative, and aesthetic dental atelier in Metro Manila offering unhurried, human-centered dental care.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

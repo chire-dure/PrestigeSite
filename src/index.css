@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Valence Atelier Redesign System */
+    --color-charcoal: #24211D;
+    --color-charcoal-deep: #1A1815;
+    --color-ivory: #F7F4EE;
+    --color-champagne-gold: #C5A869;
+    --color-champagne-gold-hover: #B39454;
+    --color-champagne-cream: #E9DFCC;
+    --color-deep-olive: #455348;
+    --color-warm-grey: #706B62;
+    --color-border-subtle: rgba(197, 168, 105, 0.22);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #24211D;
+    background-color: #F7F4EE;
+    letter-spacing: -0.01em;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Scroll Offset for fixed navigation header */
+html {
+  scroll-padding-top: 80px;
+}
+
+/* -------------------------------------------------------------
+   VALENCE ATELIER — SIGNATURE CALACATTA GOLD & LIQUID ALABASTER
+   Rich, visible Italian Calacatta Gold marble & liquid gold veins
+   ------------------------------------------------------------- */
+
+/* 1. Global Calacatta Gold Marble Canvas (Body & Main Ground) */
+body,
+.bg-ivory-gold-dust,
+.bg-calacatta-marble {
+  background-color: #F7F4EE;
+  background-image: 
+    linear-gradient(rgba(247, 244, 238, 0.58), rgba(247, 244, 238, 0.68)),
+    url('/assets/calacatta-gold-marble.jpg');
+  background-size: 850px auto;
+  background-repeat: repeat;
+}
+
+/* Dedicated Deep Charcoal Sections (High Contrast Architectural Anchors) */
+section#operatory,
+section#suites,
+section#booking,
+.bg-charcoal-dark {
+  background-color: #24211D !important;
+  color: #F7F4EE;
+}
+
+/* Ensure all ivory sections allow the Calacatta Gold marble canvas to be fully visible */
+.bg-ivory-gold-dust section:not(#suites):not(#booking):not(#operatory),
+.bg-ivory-gold-dust main > section:not(#suites):not(#booking):not(#operatory),
+.bg-ivory-gold-dust .ivory-marble-surface {
+  background-color: transparent !important;
+}
+
+/* 2. Hero Section: Rich Flowing Liquid Gold Alabaster Waves */
+.bg-alabaster-hero {
+  position: relative;
+  background-color: #F7F4EE;
+  background-image: 
+    linear-gradient(to right, rgba(247, 244, 238, 0.82) 0%, rgba(247, 244, 238, 0.62) 55%, rgba(247, 244, 238, 0.75) 100%),
+    url('/assets/liquid-gold-alabaster.jpg');
+  background-size: cover;
+  background-position: center top;
+}
+
+/* Hero Ambient Luminous Vein Accent — Warm Golden Radiance */
+.gold-shimmer-hero {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(ellipse 70% 50% at 75% 30%, rgba(227, 180, 60, 0.24) 0%, transparent 75%);
+  opacity: 0.75;
+}
+
+/* 3. Beige / Champagne Cream Surfaces with Distinct Calacatta Marble Inlay */
+.card-marble-cream,
+.gold-dust-card {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(rgba(233, 223, 204, 0.68), rgba(233, 223, 204, 0.78)),
+    url('/assets/calacatta-gold-marble.jpg');
+  background-size: 550px auto;
+  background-repeat: repeat;
+  opacity: 0.75;
+  border-radius: inherit;
+  mix-blend-mode: multiply;
+}
+
+/* Direct helper for Champagne Cream cards & containers */
+.bg-marble-cream {
+  background-color: #E9DFCC;
+  background-image: 
+    linear-gradient(rgba(233, 223, 204, 0.72), rgba(233, 223, 204, 0.82)),
+    url('/assets/calacatta-gold-marble.jpg');
+  background-size: 550px auto;
+  background-repeat: repeat;
+}
+
+/* 4. Section Ambient Vein Accent */
+.gold-dust-section {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(ellipse 80% 60% at 85% 15%, rgba(197, 168, 105, 0.18) 0%, transparent 70%);
+  opacity: 0.65;
+}
+
+/* 5. Dark Charcoal Stardust Sections (The Arrival Lounge & Booking) */
+.gold-dust-dark {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url('/assets/gold-dust-dark.svg');
+  background-size: 420px 420px;
+  background-repeat: repeat;
+  opacity: 0.55;
+}
+
+/* 6. Clean Backward Compatibility Aliases */
+.gold-dust-hero,
+.gold-dust-hero-tl,
+.gold-dust-hero-tr,
+.gold-dust-hero-bl,
+.gold-dust-corner,
+.gold-dust-corner-bottom,
+.gold-dust-overlay,
+.gold-dust-ribbon,
+.gold-dust-wave-bottom {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Fine Gold Hairline */
+.gold-hairline {
+  border-color: rgba(197, 168, 105, 0.28);
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #24211D;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A869;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B39454;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
